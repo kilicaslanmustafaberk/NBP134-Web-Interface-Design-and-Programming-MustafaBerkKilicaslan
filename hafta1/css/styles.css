@@ -1,0 +1,67 @@
+:root {
+  --card-bg: #fff;
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --accent-color: #2eaeee;
+}
+
+/* Gelişmiş Seçiciler Uygulaması */
+
+/* 1. Container içindeki doğrudan .card'ları seç */
+.card-container > .card {
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  padding: 20px;
+  margin-bottom: 15px;
+  border-left: 5px solid transparent;
+}
+
+/* 2. .active sınıfına sahip olan kartın sol kenarını boya */
+.card.active {
+  border-left-color: var(--accent-color);
+}
+
+/* 3. Kartın içindeki h3'ten hemen sonra gelen p'nin fontunu küçült */
+.card h3 + p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* 4. Öznitelik seçici: PDF linklerine ikon ekle (content ile) */
+.card a[href$=".pdf"]::after {
+  content: " 📄";
+}
+
+/* 5. Öznitelik seçici: Dış linkleri farklı renkle göster */
+.card.active a[target="_blank"] {
+  color: #e11d48 !important;
+}
+
+/*Buranın alt tarafı orjinal dosyadan bağımsız şekilde yazılmıştır.*/
+
+/* 6. .card sınıfında bulunan yazıları ortalama */
+.card {
+  text-align: center;
+}
+
+/* 7. .card sınıfına sahip elementlerin köşelerini yuvarlar */
+.card {
+  border-radius: 5px;
+}
+/* 8. .card sınıfına sahip elementlerin üzerine gelindiğinde gölge efekti ekler */
+.card:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* 9. Github linkinin rengi */
+.card a[target="_blank"] {
+  color: #666;
+}
+
+/* 10. Footer'ı ortalar ve arka plan rengini belirler */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f5f5f5;
+  margin-top: 20px;
+  border-radius: 5px;
+}
